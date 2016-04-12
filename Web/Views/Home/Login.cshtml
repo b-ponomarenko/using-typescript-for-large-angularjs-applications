@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form method="post" action="/login">
+    <input type="text" id="email" name="email" placeholder="email" />
+    <br/>
+    <input type="password" id="password" name="password" />
+    <br />
+    <button type="submit">Login</button>
+    @{
+        if (ViewBag.loginFailed)
+        {
+            <span>Login failed</span>
+        }
+    }
+</form>
