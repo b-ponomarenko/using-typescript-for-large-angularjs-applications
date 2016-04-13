@@ -44,7 +44,7 @@ namespace Web
         private static void CleanupUnusedFiles()
         {
             var adminAppDirFullPath = HttpContext.Current.Server.MapPath(string.Format("~/{0}", AdminAppDir));
-            if (Directory.Exists(adminAppDirFullPath))
+            if(Directory.Exists(adminAppDirFullPath))
             {
                 var jsFiles = Directory.GetFiles(adminAppDirFullPath, "*.js", SearchOption.AllDirectories);
                 foreach (var jsFile in jsFiles)

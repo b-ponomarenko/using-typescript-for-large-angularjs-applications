@@ -36,11 +36,13 @@ namespace Web.Controllers
         public ActionResult Login(string email, string password)
         {
             var user = _usersService.GetAll().FirstOrDefault(i => i.Email == email && i.Password == password);
-            if (user == null)
+            if(user == null)
                 return RedirectToRoute("login", new { loginFailed = true });
             FormsAuthentication.SetAuthCookie(email, false);
             // Do some cookie stuff to get our UserId to the client app
-            Response.Cookies.Add(new HttpCookie("UserId", user.UniqueId.ToString()));
+            var cookie = new HttpCookie("userId", user.UniqueId.ToString());
+            cookie.Expires = DateTime.MinValue;
+            Response.Cookies.Add(cookie);
             return RedirectToRoute("");
         }
 
@@ -50,7 +52,7 @@ namespace Web.Controllers
         {
             FormsAuthentication.SignOut();
             // Remove the cookie for the UserId in the client app
-            var cookie = new HttpCookie("UserId", string.Empty) { Expires = new DateTime(1999, 1, 1) };
+            var cookie = new HttpCookie("UserId", string.Empty) {Expires = new DateTime(1999, 1, 1)};
             Response.Cookies.Remove("UserId");
             Response.Cookies.Set(cookie);
             return RedirectToRoute("");

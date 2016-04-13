@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="scripts\angular-cookies.js" />
+    <Content Include="scripts\angular-cookies.min.js" />
+    <Content Include="scripts\angular-marked.js" />
+    <Content Include="scripts\angular-marked.min.js" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-route.min.js" />
+    <Content Include="scripts\angular-sanitize.js" />
+    <Content Include="scripts\angular-sanitize.min.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\marked.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +173,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="scripts\angular-sanitize.min.js.map" />
+    <Content Include="tslint.json" />
+    <Content Include="scripts\angular-cookies.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,11 +188,59 @@
   <ItemGroup>
     <Folder Include="content\css\" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\app.core.module.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.run.ts" />
+    <TypeScriptCompile Include="app\app.values.ts" />
+    <TypeScriptCompile Include="app\blocks\blocks.module.ts" />
+    <TypeScriptCompile Include="app\blocks\logdecorator.config.ts" />
+    <TypeScriptCompile Include="app\blogposts\blogposts.module.ts" />
+    <TypeScriptCompile Include="app\blogposts\blogposts.routes.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.routes.ts" />
+    <TypeScriptCompile Include="app\layout\layout.module.ts" />
+    <TypeScriptCompile Include="app\layout\navigation.controller.ts" />
+    <TypeScriptCompile Include="app\services\services.module.ts" />
+    <TypeScriptCompile Include="app\sitesettings\sitesettings.module.ts" />
+    <TypeScriptCompile Include="app\sitesettings\sitesettings.routes.ts" />
+    <TypeScriptCompile Include="app\usersettings\usersettings.module.ts" />
+    <TypeScriptCompile Include="app\usersettings\usersettings.routes.ts" />
+    <TypeScriptCompile Include="app\users\users.module.ts" />
+    <TypeScriptCompile Include="app\users\users.routes.ts" />
+    <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-scenario.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\marked\marked.d.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
