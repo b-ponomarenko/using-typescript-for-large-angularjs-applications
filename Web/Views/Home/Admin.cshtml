@@ -10,6 +10,8 @@
     <meta name="description" content="" />
 </head>
 <body>
+    <div ng-controller="app.layout.NavigationController as navigation"
+         ng-include="'app/layout/layout.html'"></div>
     <div ng-view>
     </div>
     @Scripts.Render("~/Scripts/angular.js")

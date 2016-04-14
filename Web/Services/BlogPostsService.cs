@@ -10,7 +10,7 @@ namespace Web.Services
     {
         public BlogPost[] GetAll()
         {
-            return BlogPosts.ToArray();
+            return BlogPosts.OrderBy(i => i.CreateDate).ToArray();
         }
 
         public BlogPost Get(Guid uniqueId)
@@ -108,7 +108,7 @@ We **have faith** the CEO!",
             new BlogPost
             {
                 UniqueId = new Guid("d6f74ff5f3c54235bb88def0488fa463"),
-                Title = "Blog Post One",
+                Title = "Blog Post Three",
                 Description = "The final post in our initial post series. Here we focus on design.",
                 Body = @"## The Final Chapter
 This is the endgame plan and exit strategy:

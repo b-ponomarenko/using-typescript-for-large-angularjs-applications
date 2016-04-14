@@ -45,7 +45,7 @@ namespace Web.Areas.Api.Controllers
             _blogPostsService.Delete(uniqueId);
         }
 
-        [Route("slugisinuse")]
+        [Route("slugisinuse/{slug}")]
         [HttpGet]
         public bool SlugIsInUse(string slug)
         {

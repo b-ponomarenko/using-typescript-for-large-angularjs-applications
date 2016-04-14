@@ -1,0 +1,16 @@
+﻿<h3>My Settings</h3>
+<form>
+    Email: <input type="text" name="email"
+                  ng-model="vm.user.email" required />
+    <br />
+    First Name: <input type="text" name="firstName"
+                       ng-model="vm.user.firstName" required />
+    <br />
+    Last Name: <input type="text" name="lastName"
+                      ng-model="vm.user.lastName" required />
+    <br />
+    Twitter: @<input type="text" name="twitterUsername"
+                     ng-model="vm.user.twitterUsername" />
+    <br />
+    <button type="submit" ng-click="vm.save()">Save</button>
+</form>

@@ -1,0 +1,22 @@
+﻿<input type="text" name="title" ng-model="vm.title" required />
+<div>
+    <section>
+        <header>Markdown</header>
+        <textarea ng-model="vm.body" cols="60" rows="10"></textarea>
+    </section>
+    <section>
+        <header>Preview</header>
+        <section marked="vm.body"></section>
+    </section>
+</div>
+<section>
+    Slug: <input type="text" name="slug" ng-model="vm.slug" 
+                 required bl-slug-check />
+    <br />
+    Description: <input type="text" name="description" ng-model="vm.description" required />
+    <br />
+    Tags: <input type="text" name="tags" ng-model="vm.tags" />
+    <br />
+    Publish Date: <input type="text" name="publishedDate" ng-model="vm.publishedDate" />
+</section>
+<button type="submit" ng-click="vm.save()">Save</button>

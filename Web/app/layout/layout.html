@@ -1,0 +1,16 @@
+﻿<ul>
+    <li><a href="/admin">Dashboard</a></li>
+    <li><a href="/admin/blogposts/newpost">New Post</a></li>
+    <li><a href="/admin/sitesettings">Settings</a></li>
+    <li><a href="/admin/users">Users</a></li>
+    <li>
+        {{navigation.fullName}}
+        <ul>
+            <li><a href="/admin/usersettings">My Settings</a></li>
+            <li>
+                <a href="javascript:void();"
+                   onclick="location.href = '/logout'">Sign Out</a>
+            </li>
+        </ul>
+    </li>
+</ul>

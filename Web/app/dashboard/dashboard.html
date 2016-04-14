@@ -1,0 +1,17 @@
+﻿<div>
+    <ul>
+        <li ng-repeat="blogPost in vm.blogPosts"
+            ng-click="vm.selectBlogPost(blogPost.uniqueId)"
+            ng-class="{ 'selected': vm.blogPost.uniqueId == blogPost.uniqueId }">
+            {{::blogPost.title}}
+            <footer>
+                {{::blogPost.publishedDate ? blogPost.publishedDate : 'Draft'}}
+            </footer>
+        </li>
+    </ul>
+    <div ng-show="vm.blogPost">
+        <a href="/admin/blogposts/{{vm.blogPost.uniqueId}}">Edit</a>
+        <h1>{{vm.blogPost.title}}</h1>
+        <span marked="vm.blogPost.body"></span>
+    </div>
+</div>
