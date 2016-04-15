@@ -43,7 +43,9 @@
 
     resolveBlogPost.$inject = ['app.services.BlogPostService'];
     function resolveBlogPost(
+        $route: ng.route.IRouteService,
         blogPostService: app.services.IBlogPostService): ng.IPromise<app.services.IBlogPost> {
-        return null;
+        var routeParams = <IBlogPostRouteParams>$route.current.params;
+        return blogPostService.getById(routeParams.uniqueId);
     }
 })();

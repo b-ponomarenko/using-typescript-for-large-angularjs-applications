@@ -8,7 +8,7 @@ var app;
             }
             SlugCheckController.$inject = ['$scope'];
             return SlugCheckController;
-        })();
+        }());
         angular
             .module('app.widgets')
             .directive('blSlugCheck', slugCheck);
@@ -31,4 +31,3 @@ var app;
         }
     })(widgets = app.widgets || (app.widgets = {}));
 })(app || (app = {}));
-//# sourceMappingURL=slugcheck.directive.js.map

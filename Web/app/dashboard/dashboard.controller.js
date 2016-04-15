@@ -19,10 +19,9 @@ var app;
             };
             DashboardController.$inject = ['blogPosts'];
             return DashboardController;
-        })();
+        }());
         angular
             .module('app.dashboard')
             .controller('app.dashboard.DashboardController', DashboardController);
     })(dashboard = app.dashboard || (app.dashboard = {}));
 })(app || (app = {}));
-//# sourceMappingURL=dashboard.controller.js.map

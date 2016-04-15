@@ -18,8 +18,7 @@
                 controller: 'app.sitesettings.SiteSettingsController',
                 controllerAs: 'vm',
                 resolve: {
-                    siteSettings: siteSettingsResolve,
-                    themeNames: themeNamesResolve
+                    siteSettings: siteSettingsResolve
                 }
             });
     }
@@ -27,12 +26,16 @@
     siteSettingsResolve.$inject = ['app.services.SiteSettingsService'];
     function siteSettingsResolve(
         siteSettingsService: app.services.ISiteSettingsService): ng.IPromise<app.services.ISiteSettings> {
-        return siteSettingsService.getSettings();
-    }
-
-    themeNamesResolve.$inject = ['app.services.SiteSettingsService'];
-    function themeNamesResolve(
-        siteSettingsService: app.services.ISiteSettingsService): ng.IPromise<string[]> {
-        return siteSettingsService.getThemes();
+        return siteSettingsService.getSettings()
+            .then((siteSettings: app.services.ISiteSettings): ng.IPromise<app.services.ISiteSettings> => {
+                return siteSettingsService.getSettings();
+            })
+            .then((siteSettings: app.services.ISiteSettings): ng.IPromise<app.services.ISiteSettings> => {
+                return siteSettingsService.getThemes()
+                    .then((themeNames: string[]): app.services.ISiteSettings => {
+                        siteSettings.availableThemeNames = themeNames;
+                        return siteSettings;
+                    });
+            });
     }
 })(); 

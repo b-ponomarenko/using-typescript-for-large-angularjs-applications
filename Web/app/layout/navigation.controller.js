@@ -16,10 +16,9 @@ var app;
                 'app.services.UserService'
             ];
             return NavigationController;
-        })();
+        }());
         angular
             .module('app.layout')
             .controller('app.layout.NavigationController', NavigationController);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
-//# sourceMappingURL=navigation.controller.js.map

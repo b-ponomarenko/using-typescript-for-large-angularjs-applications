@@ -8,4 +8,3 @@
         apiEndpointProvider.configure('/api');
     }
 })();
-//# sourceMappingURL=apiendpoint.config.js.map

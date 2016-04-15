@@ -19,10 +19,9 @@ var app;
             };
             BlogPostController.$inject = ['blogPost'];
             return BlogPostController;
-        })();
+        }());
         angular
             .module('app.blogposts')
             .controller('app.blogposts.BlogPostController', BlogPostController);
     })(blogposts = app.blogposts || (app.blogposts = {}));
 })(app || (app = {}));
-//# sourceMappingURL=blogpost.controller.js.map

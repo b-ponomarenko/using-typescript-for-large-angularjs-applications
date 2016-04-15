@@ -14,4 +14,3 @@
         'hc.marked'
     ]);
 })();
-//# sourceMappingURL=app.core.module.js.map

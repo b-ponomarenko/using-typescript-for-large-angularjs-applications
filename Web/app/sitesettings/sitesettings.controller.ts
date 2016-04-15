@@ -13,14 +13,14 @@
 
         static $inject = [
             'siteSettings',
-            'themeNames',
+            'availableThemeNames',
             'app.services.SiteSettingsService'
         ];
         constructor(siteSettings: app.services.ISiteSettings,
             themeNames: string[],
             private siteSettingsService: app.services.ISiteSettingsService) {
             this.siteSettings = siteSettings;
-            this.themeNames = themeNames;
+            this.themeNames = siteSettings.availableThemeNames;
         }
 
         save(): void {

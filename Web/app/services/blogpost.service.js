@@ -30,7 +30,7 @@ var app;
                 });
             };
             return BlogPostService;
-        })();
+        }());
         factory.$inject = [
             '$http',
             'app.blocks.ApiEndpoint'
@@ -43,4 +43,3 @@ var app;
             .factory('app.services.BlogPostService', factory);
     })(services = app.services || (app.services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=blogpost.service.js.map

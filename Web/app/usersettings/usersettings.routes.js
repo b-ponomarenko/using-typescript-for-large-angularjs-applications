@@ -26,4 +26,3 @@
         return userService.getById(currentUser.userId);
     }
 })();
-//# sourceMappingURL=usersettings.routes.js.map

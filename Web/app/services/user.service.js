@@ -15,10 +15,9 @@ var app;
             };
             UserService.$inject = ['$http'];
             return UserService;
-        })();
+        }());
         angular
             .module('app.services')
             .service('app.services.UserService', UserService);
     })(services = app.services || (app.services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=user.service.js.map

@@ -15,10 +15,9 @@ var app;
                 return this.config;
             };
             return ApiEndpointProvider;
-        })();
+        }());
         angular
             .module('app.blocks')
             .provider('app.blocks.ApiEndpoint', ApiEndpointProvider);
     })(blocks = app.blocks || (app.blocks = {}));
 })(app || (app = {}));
-//# sourceMappingURL=apiendpoint.provider.js.map

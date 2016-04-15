@@ -17,4 +17,3 @@
         'app.usersettings'
     ]);
 })();
-//# sourceMappingURL=app.module.js.map

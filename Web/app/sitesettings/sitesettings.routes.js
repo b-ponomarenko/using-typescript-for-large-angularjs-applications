@@ -14,18 +14,22 @@
             controller: 'app.sitesettings.SiteSettingsController',
             controllerAs: 'vm',
             resolve: {
-                siteSettings: siteSettingsResolve,
-                themeNames: themeNamesResolve
+                siteSettings: siteSettingsResolve
             }
         });
     }
     siteSettingsResolve.$inject = ['app.services.SiteSettingsService'];
     function siteSettingsResolve(siteSettingsService) {
-        return siteSettingsService.getSettings();
-    }
-    themeNamesResolve.$inject = ['app.services.SiteSettingsService'];
-    function themeNamesResolve(siteSettingsService) {
-        return siteSettingsService.getThemes();
+        return siteSettingsService.getSettings()
+            .then(function (siteSettings) {
+            return siteSettingsService.getSettings();
+        })
+            .then(function (siteSettings) {
+            return siteSettingsService.getThemes()
+                .then(function (themeNames) {
+                siteSettings.availableThemeNames = themeNames;
+                return siteSettings;
+            });
+        });
     }
 })();
-//# sourceMappingURL=sitesettings.routes.js.map

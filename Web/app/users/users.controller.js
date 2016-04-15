@@ -28,10 +28,9 @@ var app;
             };
             UsersController.$inject = [];
             return UsersController;
-        })();
+        }());
         angular
             .module('app.users')
             .controller('app.users.UsersController', UsersController);
     })(users = app.users || (app.users = {}));
 })(app || (app = {}));
-//# sourceMappingURL=users.controller.js.map

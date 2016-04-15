@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -202,6 +203,7 @@
     <TypeScriptCompile Include="app\blocks\apiendpoint.config.ts" />
     <TypeScriptCompile Include="app\blocks\apiendpoint.provider.ts" />
     <TypeScriptCompile Include="app\blocks\blocks.module.ts" />
+    <TypeScriptCompile Include="app\blocks\errorbroker.service.ts" />
     <TypeScriptCompile Include="app\blocks\logdecorator.config.ts" />
     <TypeScriptCompile Include="app\blogposts\blogpost.controller.ts" />
     <TypeScriptCompile Include="app\blogposts\blogposts.module.ts" />
@@ -212,6 +214,8 @@
     <TypeScriptCompile Include="app\layout\layout.module.ts" />
     <TypeScriptCompile Include="app\layout\navigation.controller.ts" />
     <TypeScriptCompile Include="app\services\blogpost.service.ts" />
+    <TypeScriptCompile Include="app\services\errorloggers\consolerrorlogger.ts" />
+    <TypeScriptCompile Include="app\services\errorloggers\servererrorlogger.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
     <TypeScriptCompile Include="app\services\sitesettings.service.ts" />
     <TypeScriptCompile Include="app\services\user.service.ts" />

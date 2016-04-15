@@ -11,10 +11,9 @@ var app;
             };
             UserSettingsController.$inject = ['user'];
             return UserSettingsController;
-        })();
+        }());
         angular
             .module('app.usersettings')
             .controller('app.usersettings.UserSettingsController', UserSettingsController);
     })(usersettings = app.usersettings || (app.usersettings = {}));
 })(app || (app = {}));
-//# sourceMappingURL=usersettings.controller.js.map

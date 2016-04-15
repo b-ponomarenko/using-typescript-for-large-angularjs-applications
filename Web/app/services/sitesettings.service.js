@@ -23,7 +23,7 @@ var app;
                 });
             };
             return SiteSettingsService;
-        })();
+        }());
         factory.$inject = [
             '$http',
             'app.blocks.ApiEndpoint'
@@ -36,4 +36,3 @@ var app;
             .factory('app.services.SiteSettingsService', factory);
     })(services = app.services || (app.services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=sitesettings.service.js.map

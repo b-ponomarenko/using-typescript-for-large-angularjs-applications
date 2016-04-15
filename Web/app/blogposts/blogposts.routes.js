@@ -32,8 +32,8 @@
         };
     }
     resolveBlogPost.$inject = ['app.services.BlogPostService'];
-    function resolveBlogPost(blogPostService) {
-        return null;
+    function resolveBlogPost($route, blogPostService) {
+        var routeParams = $route.current.params;
+        return blogPostService.getById(routeParams.uniqueId);
     }
 })();
-//# sourceMappingURL=blogposts.routes.js.map

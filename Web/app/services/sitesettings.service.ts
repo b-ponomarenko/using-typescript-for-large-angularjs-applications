@@ -5,6 +5,7 @@
         title: string;
         description: string;
         themeName: string;
+        availableThemeNames: string[];
     }
 
     export interface ISiteSettingsService {

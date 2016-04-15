@@ -23,4 +23,3 @@
         return blogPostService.getAll();
     }
 })();
-//# sourceMappingURL=dashboard.routes.js.map
